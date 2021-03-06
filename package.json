@@ -1,0 +1,52 @@
+{
+  "name": "ts-f-api",
+  "version": "0.0.1",
+  "description": "Scaffolding for a Typescript poject for a frontend API server",
+  "main": "dist/src/index.js",
+  "repository": "git@github.com:asleepysamurai/ts-scaffold-f-api.git",
+  "author": "Balaganesh Damodaran <asleepysamurai@gmail.com>",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "prep": "rimraf dist && mkdir -p dist && cp tsconfig.json ./dist && mkdir -p src/codegen",
+    "build:run": "tsc && yarn run:standard",
+    "build:watch:run": "tsc-watch --noClear --onSuccess \"yarn run:inspect\"",
+    "build:watch:run-brk": "tsc-watch --noClear --onSuccess \"yarn run:inspect-brk\"",
+    "run:standard": "cd dist && env NODE_ENV=development node -r tsconfig-paths/register ./src/index.js",
+    "run:inspect": "cd dist && env NODE_ENV=development node --inspect -r tsconfig-paths/register ./src/index.js",
+    "run:inspect-brk": "cd dist && env NODE_ENV=development node --inspect-brk -r tsconfig-paths/register ./src/index.js",
+    "start": "yarn prep && yarn build:run",
+    "start:inspect": "yarn prep && yarn build:watch:run",
+    "start:inspect-brk": "yarn prep && yarn build:watch:run-brk",
+    "test": "TZ='UTC' jest",
+    "test:inspect-brk": "TZ='UTC' node --inspect-brk `which jest` --runInBand"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.0.1",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "eslint": "^7.0.0",
+    "eslint-plugin-import": "^2.20.2",
+    "husky": "^4.2.5",
+    "jest": "^26.6.3",
+    "prettier": "2.0.5",
+    "prettier-eslint-cli": "^5.0.0",
+    "pretty-quick": "^2.0.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.5.3",
+    "ts-node": "^8.10.1",
+    "tsc-watch": "^4.2.5",
+    "typescript": "^3.9.2",
+    "tsconfig-paths": "^3.9.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "engines": {
+    "node": ">=14.2.0 <15.0.0"
+  },
+  "dependencies": {}
+}
