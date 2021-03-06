@@ -5,7 +5,7 @@ const OFF = 0,
 module.exports = {
   env: {
     node: true,
-    es6: true,
+    es2020: true,
   },
   extends: ['eslint:recommended'],
   globals: {
