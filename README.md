@@ -1,13 +1,3 @@
-# [ts-scaffold-f-api](https://github.com/asleepysamurai/ts-scaffold-f-api)
-
-This is a scaffold app for a Typescript + Node + Postgres API server. I fork this app and use it as the base whenever I want to create a new API server.
-
-Frequently updated to incorporate changes from the forks.
-
-## Todo: Cleanup committed secrets
-
-Ideally secrets should not be committed to git, but since the secrets committed here are only ever used locally in my dev environment, I'm going to be lazy about it for now.
-
 ## Forked for WunderMobility Take Home Coding Challenge
 
 Gutted all of the db, server, and API related code, since this challenge just requires a couple of scripts.
@@ -49,3 +39,5 @@ Gutted all of the db, server, and API related code, since this challenge just re
 - Perhaps log errors while parsing instead of silently skipping to next line - not sure if printing out a long list of errors while parsing was going to be helpful
 
 I've also not just directly refactored the part1 of the assignment, and instead copied the file over for part2 and refactored there. This was done to aid comparisons between the two versions without having to switch branches. As such they use a lot of duplicated functions that could have been extracted out and shared.
+
+I've also opted to go for the approach of parsing lines and fields seperately instead of just iterating throught the payload string once and extracting as I go. I thought my approach of extracting line by line and then field by field was more readable, and considering the maximum possible size of a line, it seemed like a reasonable performance tradeoff.
