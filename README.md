@@ -1,4 +1,4 @@
-## Forked for WunderMobility Take Home Coding Challenge
+## Forked from [ts-scaffold-api](https://github.com/asleepysamurai/ts-scaffold-f-api/) for WunderMobility Take Home Coding Challenge
 
 Gutted all of the db, server, and API related code, since this challenge just requires a couple of scripts.
 
