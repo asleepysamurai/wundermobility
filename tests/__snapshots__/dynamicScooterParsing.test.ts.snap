@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Extracts valid error and deviceInfo from string 1`] = `
+Array [
+  Object {
+    "batteryLevel": "86 %",
+    "imei": "860861040012977",
+    "odometer": "5600 km",
+    "time": 2021-01-14T15:05:10.000Z,
+  },
+  Object {
+    "ECUFailure": 7,
+    "IotError": 10,
+    "NoBattery": 5,
+    "Reboot": 8,
+    "imei": "860861040012977",
+    "time": 2021-01-14T19:05:10.000Z,
+  },
+]
+`;
